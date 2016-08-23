@@ -1,0 +1,120 @@
+
+/* Define default spinner */
+.ui-icon-loading {
+	background: url("files/resources/lib/jquerymobile/1.4.4/images/ajax-loader.gif") repeat scroll 0 0 / 46px 46px transparent!important;
+}
+/* mobilecontainer1 */
+.ui-content.Facebook_Login_mobilecontainer1 {
+	padding: 15px 15px 15px 15px;
+}
+/* loginButton */
+#Facebook_Login_loginButton {
+
+}
+.ui-btn.Facebook_Login_loginButton {
+	margin: 4px 5px 4px 5px;
+}
+/* spacer_4 */
+.Facebook_Login_spacer_4 {
+	width: 260px; height: 24px;
+	margin: 4px 0px 4px 0px;
+}
+/* signupButton */
+#Facebook_Login_signupButton {
+
+}
+.ui-btn.Facebook_Login_signupButton {
+	margin: 4px 5px 4px 5px;
+}
+/* spacer_5 */
+.Facebook_Login_spacer_5 {
+	width: 260px; height: 22px;
+	margin: 4px 0px 4px 0px;
+}
+/* mobilebutton1 */
+#Facebook_Login_mobilebutton1 {
+
+}
+.ui-btn.Facebook_Login_mobilebutton1 {
+	margin: 4px 5px 4px 5px;
+}
+/* spacer_19 */
+.Facebook_Login_spacer_19 {
+	width: 260px; height: 18px;
+	margin: 4px 0px 4px 0px;
+}
+/* mobilebuttonfb */
+#Facebook_Login_mobilebuttonfb {
+
+}
+.ui-btn.Facebook_Login_mobilebuttonfb {
+	margin: 4px 5px 4px 5px;
+}
+/* nameInput */
+.Facebook_Login_nameInput {
+	margin: 4px 0px 4px 0px;
+	display: none;
+}
+/* lastnameInput */
+.Facebook_Login_lastnameInput {
+	margin: 4px 0px 4px 0px;
+	display: none;
+}
+/* emailInput */
+.Facebook_Login_emailInput {
+	margin: 4px 0px 4px 0px;
+	display: none;
+}
+/* usernameInput */
+.Facebook_Login_usernameInput {
+	margin: 4px 0px 4px 0px;
+	display: none;
+}
+/* passwordInput */
+.Facebook_Login_passwordInput {
+	margin: 4px 0px 4px 0px;
+	display: none;
+}
+/* spacer_16 */
+.Facebook_Login_spacer_16 {
+	width: 260px; height: 19px;
+	margin: 4px 0px 4px 0px;
+	display: none;
+}
+/* signupButtonSend */
+#Facebook_Login_signupButtonSend {
+	display: none;
+}
+.ui-btn.Facebook_Login_signupButtonSend {
+	margin: 4px 5px 4px 5px;
+}
+/* spacer_12 */
+.Facebook_Login_spacer_12 {
+	width: 260px; height: 36px;
+	margin: 4px 0px 4px 0px;
+	display: none;
+}
+/* loginButtonSend */
+#Facebook_Login_loginButtonSend {
+	display: none;
+}
+.ui-btn.Facebook_Login_loginButtonSend {
+	margin: 4px 5px 4px 5px;
+}
+/* spacer_18 */
+.Facebook_Login_spacer_18 {
+	width: 260px; height: 13px;
+	margin: 4px 0px 4px 0px;
+	display: none;
+}
+/* backButton */
+#Facebook_Login_backButton {
+	display: none;
+}
+.ui-btn.Facebook_Login_backButton {
+	margin: 4px 5px 4px 5px;
+}
+/* mobilefooter1 */
+.Facebook_Login_mobilefooter1 {
+	min-height:38px;
+}

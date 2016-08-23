@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>
+            startScreen
+        </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="msapplication-tap-highlight" content="no">
+        <link href="files/resources/lib/theme/jqm/jqm.css" rel="stylesheet" />
+        <link href="files/resources/lib/theme/dendrite/dendrite.css" rel="stylesheet" />
+        <link href="files/resources/lib/jquerymobile/1.4.4/jquery.mobile.structure-1.4.4.css"
+        rel="stylesheet" />
+        <script type="text/javascript" src="files/resources/lib/underscore/underscore.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/store/json2.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/jquery/jquery-2.1.1.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/jquery/jquery-ajaxTransport.js">
+        </script>
+        <script type="text/javascript">
+                    $(document).bind("mobileinit", function()
+            {
+                if (navigator.userAgent.toLowerCase().indexOf("android") != -1)
+                {
+                    $.mobile.defaultPageTransition = 'none';
+                    $.mobile.defaultDialogTransition = 'none';
+                }
+                else if (navigator.userAgent.toLowerCase().indexOf("msie") != -1)
+                {
+                    $.mobile.allowCrossDomainPages = true;
+                    $.support.cors = true;
+                }
+                else if (navigator.userAgent.match(/(iPad|iPhone|iPod)/g))
+                {
+                    $.mobile.hashListeningEnabled = false;
+                }
+            });
+        </script>
+        <script type="text/javascript" src="files/resources/lib/jquerymobile/1.4.4/jquery.mobile-1.4.4.js">
+        </script>
+        <script type="text/javascript" src="files/resources/js/mobilebase.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/event/customEventHandler.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/sha1.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/oauth.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/contexts.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/jquery.xml2json.min.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/ms_sdk_bundle/q/q.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/ms_sdk_bundle/EventEmitter.js/EventEmitter.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/ms_sdk_bundle/tv4/tv4.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/ms_sdk_bundle/localforage/dist/localforage.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/ms_sdk_bundle/localforage/plugins/localforage-setitems/localforage-setitems.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/ms_sdk_bundle/localforage/plugins/localforage-find/localforage-find.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/ms_sdk_bundle/crypto-js-md5/crypto-js-md5.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/ms_sdk_bundle/moment/moment.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/ms_sdk_bundle/underscore-query/underscore-query.min.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/ms_sdk_bundle/offline/offline.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/ms_sdk_bundle/client-sdk.js">
+        </script>
+        <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/jquery-ui-map/jquery.ui.map.full.min.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/appery.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/component-manager.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/mapping-impl.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/entity-api.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/login.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/storage-api.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/get_target_platform.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/cordova.js">
+        </script>
+        <link href="files/resources/css/mobilebase.css" rel="stylesheet" type="text/css"
+        />
+        <script type="text/javascript" src="files/views/assets/js/services/model.js">
+        </script>
+        <script type="text/javascript" src="files/views/assets/js/Facebook_Helper.js">
+        </script>
+        <script type="text/javascript" src="files/views/assets/js/GoogleMapJS.js">
+        </script>
+        <script type="text/javascript" src="files/views/assets/js/services/service.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/databaseUtils.js">
+        </script>
+    </head>
+    
+    <body>
+        <script language="JavaScript" type="text/javascript">
+                
+        </script>
+        <div data-role="page" style="min-height:800px;" dsid="startScreen" id="startScreen"
+        class="type-interior" data-theme="b">
+            <!-- mobileheader1 -->
+            <div data-role="header" data-position="inline" data-add-back-btn="false" data-back-btn-text="Back"
+            data-theme="b" name="mobileheader1" id="startScreen_mobileheader1" class="startScreen_mobileheader1">
+                <h1 dsid="mobileheader1">
+                    Mapsit
+                </h1>
+                <!-- mobilenavbar_4 -->
+                <div data-role="navbar" id="startScreen_mobilenavbar_4" name="mobilenavbar_4" dsid="mobilenavbar_4"
+                class="startScreen_mobilenavbar_4" data-theme="b" style="position: relative;">
+                    <ul>
+                        <!-- pinpointmeItem -->
+                        <li>
+                            <a data-theme="b" data-icon="home" id="startScreen_pinpointmeItem" dsid="pinpointmeItem"
+                            name="pinpointmeItem">
+                            Pin Point Me
+                            </a>
+                        </li>
+                        <!-- myplacesItem -->
+                        <li>
+                            <a data-theme="b" data-icon="star" id="startScreen_myplacesItem" dsid="myplacesItem"
+                            name="myplacesItem">
+                            My Places
+                            </a>
+                        </li>
+                        <!-- signoutItem -->
+                        <li>
+                            <a data-theme="b" data-icon="delete" id="startScreen_signoutItem" dsid="signoutItem"
+                            name="signoutItem">
+                            Sign Out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- mobilecontainer1 -->
+            <div data-role="content" id="startScreen_mobilecontainer1" name="mobilecontainer1"
+            class="startScreen_mobilecontainer1 ui-content" dsid="mobilecontainer1" data-theme="b">
+                <link href="startScreen.css" rel="stylesheet" type="text/css" />
+                <script type="text/javascript" src="startScreen.js">
+                </script>
+                <!-- google_map -->
+                <div id="startScreen_google_map" dsid="google_map" name="google_map" data-role="appery_googlemap"
+                tiggzitype="object" apperytype="object" class='startScreen_google_map' style='width:100%;'>
+                </div>
+                <ul data-role="listview" id="startScreen_google_map_markers" name="google_map_markers"
+                dsid="google_map_markers" style="display:none">
+                    <!-- marker_3 -->
+                    <li id="startScreen_marker_3" name="marker_3" dsid="marker_3" tiggzitype="marker"
+                    apperytype="marker" rendered="false" latitude="" longitude="" text="" address=""
+                    show_info="true" style="display:none">
+                        <div id="startScreen_marker_3_infoWindow" name="marker_3_infoWindowContent" class='startScreen_marker_3'>
+                        </div>
+                    </li>
+                </ul>
+                <!-- to -->
+                <div data-role="fieldcontain" class="startScreen_to ">
+                    <input type="text" name="to" dsid="to" value="" placeholder="Where we go ?" id="startScreen_to"
+                    tabindex="8" multiple data-theme="b" data-mini="true" class="startScreen_to" />
+                </div>
+                <!-- show_directions --><!--
+                --><a data-role="button" name="show_directions" dsid="show_directions" class="startScreen_show_directions"
+                id="startScreen_show_directions" data-corners="true" data-icon="none" data-iconpos='nowhere'
+                x-apple-data-detectors="false" data-mini="false" data-theme="b" tabindex="4">
+                Let's Go There
+                </a><!--
+                --><!-- marker_location -->
+                <div data-role="fieldcontain" class="startScreen_marker_location ">
+                    <input type="text" name="marker_location" dsid="marker_location" value="" placeholder="Actual Location"
+                    id="startScreen_marker_location" tabindex="10" multiple data-theme="b" data-mini="true"
+                    class="startScreen_marker_location" />
+                </div>
+                <!-- place_marker --><!--
+                --><a data-role="button" name="place_marker" dsid="place_marker" class="startScreen_place_marker"
+                id="startScreen_place_marker" data-corners="true" data-icon="none" data-iconpos='nowhere'
+                x-apple-data-detectors="false" data-mini="false" data-theme="b" tabindex="2">
+                Pin Point Here
+                </a><!--
+                --><!-- show_traffic --><!--
+                --><a data-role="button" name="show_traffic" dsid="show_traffic" class="startScreen_show_traffic"
+                id="startScreen_show_traffic" data-corners="true" data-icon="none" data-iconpos='nowhere'
+                x-apple-data-detectors="false" data-mini="false" data-theme="b" tabindex="5">
+                Show Traffic
+                </a><!--
+                --><!-- get_markers --><!--
+                --><a data-role="button" name="get_markers" dsid="get_markers" class="startScreen_get_markers"
+                id="startScreen_get_markers" data-corners="true" data-icon="none" data-iconpos='nowhere'
+                x-apple-data-detectors="false" data-mini="false" data-theme="b" tabindex="6">
+                Map All My Places
+                </a><!--
+                --><!-- show_my_location --><!--
+                --><a data-role="button" name="show_my_location" dsid="show_my_location" class="startScreen_show_my_location"
+                id="startScreen_show_my_location" data-corners="true" data-icon="none" data-iconpos='nowhere'
+                x-apple-data-detectors="false" data-mini="false" data-theme="b" tabindex="7">
+                Where Am I ?
+                </a>
+            </div>
+            <!-- mobilefooter1 -->
+            <div data-role="footer" data-position="fixed" class="startScreen_mobilefooter1"
+            name="mobilefooter1" dsid="mobilefooter1" id="startScreen_mobilefooter1" data-theme="b">
+            </div>
+        </div>
+    </body>
+
+</html>

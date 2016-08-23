@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>
+            Facebook_Login
+        </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="msapplication-tap-highlight" content="no">
+        <link href="files/resources/lib/theme/jqm/jqm.css" rel="stylesheet" />
+        <link href="files/resources/lib/theme/dendrite/dendrite.css" rel="stylesheet" />
+        <link href="files/resources/lib/jquerymobile/1.4.4/jquery.mobile.structure-1.4.4.css"
+        rel="stylesheet" />
+        <script type="text/javascript" src="files/resources/lib/underscore/underscore.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/store/json2.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/jquery/jquery-2.1.1.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/jquery/jquery-ajaxTransport.js">
+        </script>
+        <script type="text/javascript">
+                    $(document).bind("mobileinit", function()
+            {
+                if (navigator.userAgent.toLowerCase().indexOf("android") != -1)
+                {
+                    $.mobile.defaultPageTransition = 'none';
+                    $.mobile.defaultDialogTransition = 'none';
+                }
+                else if (navigator.userAgent.toLowerCase().indexOf("msie") != -1)
+                {
+                    $.mobile.allowCrossDomainPages = true;
+                    $.support.cors = true;
+                }
+                else if (navigator.userAgent.match(/(iPad|iPhone|iPod)/g))
+                {
+                    $.mobile.hashListeningEnabled = false;
+                }
+            });
+        </script>
+        <script type="text/javascript" src="files/resources/lib/jquerymobile/1.4.4/jquery.mobile-1.4.4.js">
+        </script>
+        <script type="text/javascript" src="files/resources/js/mobilebase.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/event/customEventHandler.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/sha1.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/oauth.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/contexts.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/jquery.xml2json.min.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/ms_sdk_bundle/q/q.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/ms_sdk_bundle/EventEmitter.js/EventEmitter.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/ms_sdk_bundle/tv4/tv4.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/ms_sdk_bundle/localforage/dist/localforage.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/ms_sdk_bundle/localforage/plugins/localforage-setitems/localforage-setitems.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/ms_sdk_bundle/localforage/plugins/localforage-find/localforage-find.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/ms_sdk_bundle/crypto-js-md5/crypto-js-md5.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/ms_sdk_bundle/moment/moment.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/ms_sdk_bundle/underscore-query/underscore-query.min.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/ms_sdk_bundle/offline/offline.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/ms_sdk_bundle/client-sdk.js">
+        </script>
+        <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/jquery-ui-map/jquery.ui.map.full.min.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/appery.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/component-manager.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/mapping-impl.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/entity-api.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/login.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/storage-api.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/get_target_platform.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/cordova.js">
+        </script>
+        <link href="files/resources/css/mobilebase.css" rel="stylesheet" type="text/css"
+        />
+        <script type="text/javascript" src="files/views/assets/js/services/model.js">
+        </script>
+        <script type="text/javascript" src="files/views/assets/js/Facebook_Helper.js">
+        </script>
+        <script type="text/javascript" src="files/views/assets/js/GoogleMapJS.js">
+        </script>
+        <script type="text/javascript" src="files/views/assets/js/services/service.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/databaseUtils.js">
+        </script>
+    </head>
+    
+    <body>
+        <script language="JavaScript" type="text/javascript">
+                
+        </script>
+        <div data-role="page" style="min-height:480px;" dsid="Facebook_Login" id="Facebook_Login"
+        class="type-interior" data-theme="b">
+            <!-- mobileheader1 -->
+            <div data-role="header" data-position="fixed" data-add-back-btn="false" data-back-btn-text="Back"
+            data-theme="b" name="mobileheader1" id="Facebook_Login_mobileheader1" class="Facebook_Login_mobileheader1">
+                <h1 dsid="mobileheader1">
+                    Login
+                </h1>
+            </div>
+            <!-- mobilecontainer1 -->
+            <div data-role="content" id="Facebook_Login_mobilecontainer1" name="mobilecontainer1"
+            class="Facebook_Login_mobilecontainer1 ui-content" dsid="mobilecontainer1" data-theme="b">
+                <link href="Facebook_Login.css" rel="stylesheet" type="text/css" />
+                <script type="text/javascript" src="Facebook_Login.js">
+                </script>
+                <!-- loginButton --><!--
+                --><a data-role="button" name="loginButton" dsid="loginButton" class="Facebook_Login_loginButton"
+                id="Facebook_Login_loginButton" data-corners="true" data-icon="check" data-iconpos="right"
+                x-apple-data-detectors="false" data-mini="false" data-theme="b" tabindex="1">
+                Log In
+                </a><!--
+                --><!-- spacer_4 -->
+                <div id="Facebook_Login_spacer_4" data-role="appery_spacer" dsid="spacer_4" class='mobilespacer Facebook_Login_spacer_4'>
+                </div>
+                <!-- signupButton --><!--
+                --><a data-role="button" name="signupButton" dsid="signupButton" class="Facebook_Login_signupButton"
+                id="Facebook_Login_signupButton" data-corners="true" data-icon="edit" data-iconpos="right"
+                x-apple-data-detectors="false" data-mini="false" data-theme="b" tabindex="2">
+                Sign Up
+                </a><!--
+                --><!-- spacer_5 -->
+                <div id="Facebook_Login_spacer_5" data-role="appery_spacer" dsid="spacer_5" class='mobilespacer Facebook_Login_spacer_5'>
+                </div>
+                <!-- mobilebutton1 --><!--
+                --><a data-role="button" name="mobilebutton1" dsid="mobilebutton1" class="Facebook_Login_mobilebutton1"
+                id="Facebook_Login_mobilebutton1" data-corners="true" data-icon="user" data-iconpos="right"
+                x-apple-data-detectors="false" data-mini="false" data-theme="b" tabindex="3">
+                Login with Facebook
+                </a><!--
+                --><!-- spacer_19 -->
+                <div id="Facebook_Login_spacer_19" data-role="appery_spacer" dsid="spacer_19" class='mobilespacer Facebook_Login_spacer_19'>
+                </div>
+                <!-- mobilebuttonfb --><!--
+                --><a data-role="button" name="mobilebuttonfb" dsid="mobilebuttonfb" class="Facebook_Login_mobilebuttonfb"
+                id="Facebook_Login_mobilebuttonfb" data-corners="true" data-icon="location" data-iconpos="right"
+                x-apple-data-detectors="false" data-mini="false" data-theme="b" tabindex="14">
+                Signup with Facebook
+                </a><!--
+                --><!-- nameInput -->
+                <div data-role="fieldcontain" class="Facebook_Login_nameInput ">
+                    <input type="text" name="nameInput" dsid="nameInput" value="" placeholder="Name"
+                    id="Facebook_Login_nameInput" tabindex="4" multiple data-theme="b" class="Facebook_Login_nameInput"
+                    />
+                </div>
+                <!-- lastnameInput -->
+                <div data-role="fieldcontain" class="Facebook_Login_lastnameInput ">
+                    <input type="text" name="lastnameInput" dsid="lastnameInput" value="" placeholder="Last Name"
+                    id="Facebook_Login_lastnameInput" tabindex="5" multiple data-theme="b" class="Facebook_Login_lastnameInput"
+                    />
+                </div>
+                <!-- emailInput -->
+                <div data-role="fieldcontain" class="Facebook_Login_emailInput ">
+                    <input type="email" name="emailInput" dsid="emailInput" value="" placeholder="Email"
+                    id="Facebook_Login_emailInput" tabindex="6" multiple data-theme="b" class="Facebook_Login_emailInput"
+                    />
+                </div>
+                <!-- usernameInput -->
+                <div data-role="fieldcontain" class="Facebook_Login_usernameInput ">
+                    <input type="text" name="usernameInput" dsid="usernameInput" value="" placeholder="Username"
+                    id="Facebook_Login_usernameInput" tabindex="7" multiple data-theme="b" class="Facebook_Login_usernameInput"
+                    />
+                </div>
+                <!-- passwordInput -->
+                <div data-role="fieldcontain" class="Facebook_Login_passwordInput ">
+                    <input type="password" name="passwordInput" dsid="passwordInput" value="" placeholder="Password"
+                    id="Facebook_Login_passwordInput" tabindex="8" multiple data-theme="b" class="Facebook_Login_passwordInput"
+                    />
+                </div>
+                <!-- spacer_16 -->
+                <div id="Facebook_Login_spacer_16" data-role="appery_spacer" dsid="spacer_16" class='mobilespacer Facebook_Login_spacer_16'>
+                </div>
+                <!-- signupButtonSend --><!--
+                --><a data-role="button" name="signupButtonSend" dsid="signupButtonSend" class="Facebook_Login_signupButtonSend"
+                id="Facebook_Login_signupButtonSend" data-corners="true" data-icon="edit" data-iconpos="left"
+                x-apple-data-detectors="false" data-mini="false" data-theme="b" tabindex="9">
+                Sign Up
+                </a><!--
+                --><!-- spacer_12 -->
+                <div id="Facebook_Login_spacer_12" data-role="appery_spacer" dsid="spacer_12" class='mobilespacer Facebook_Login_spacer_12'>
+                </div>
+                <!-- loginButtonSend --><!--
+                --><a data-role="button" name="loginButtonSend" dsid="loginButtonSend" class="Facebook_Login_loginButtonSend"
+                id="Facebook_Login_loginButtonSend" data-corners="true" data-icon="check" data-iconpos="left"
+                x-apple-data-detectors="false" data-mini="false" data-theme="b" tabindex="12">
+                Log In
+                </a><!--
+                --><!-- spacer_18 -->
+                <div id="Facebook_Login_spacer_18" data-role="appery_spacer" dsid="spacer_18" class='mobilespacer Facebook_Login_spacer_18'>
+                </div>
+                <!-- backButton --><!--
+                --><a data-role="button" name="backButton" dsid="backButton" class="Facebook_Login_backButton"
+                id="Facebook_Login_backButton" data-corners="true" data-icon="delete" data-iconpos="left"
+                x-apple-data-detectors="false" data-mini="false" data-theme="b" tabindex="13">
+                Back
+                </a>
+            </div>
+            <!-- mobilefooter1 -->
+            <div data-role="footer" data-position="fixed" class="Facebook_Login_mobilefooter1"
+            name="mobilefooter1" dsid="mobilefooter1" id="Facebook_Login_mobilefooter1" data-theme="b">
+            </div>
+        </div>
+    </body>
+
+</html>

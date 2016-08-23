@@ -1,0 +1,41 @@
+
+/* Define default spinner */
+.ui-icon-loading {
+	background: url("files/resources/lib/jquerymobile/1.4.4/images/ajax-loader.gif") repeat scroll 0 0 / 46px 46px transparent!important;
+}
+/* mobilecontainer2 */
+.ui-content.Facebook_Me_mobilecontainer2 {
+	padding: 15px 15px 15px 15px;
+}
+/* Name */
+.Facebook_Me_Name {
+	font-weight: normal;
+	margin: 4px 0px 4px 0px;
+	word-wrap: break-word;
+	white-space: normal;
+}
+/* mobilelist_4 */
+.ui-page .Facebook_Me_mobilelist_4 {
+	margin: 4px 0px 0px 0px;
+}
+/* mobilelistitem_5 */
+/* mobilelistitembutton_6 */
+.Facebook_Me_mobilelistitembutton_6 {
+
+}
+/* spacer_12 */
+.Facebook_Me_spacer_12 {
+	width: 260px; height: 19px;
+	margin: 4px 0px 4px 0px;
+}
+/* backButtonList */
+#Facebook_Me_backButtonList {
+
+}
+.ui-btn.Facebook_Me_backButtonList {
+	margin: 4px 5px 4px 5px;
+}
+/* mobilefooter2 */
+.Facebook_Me_mobilefooter2 {
+	min-height:38px;
+}
